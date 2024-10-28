@@ -10,7 +10,8 @@
     <h1>Shopping list</h1>
 
     <ul>
-      <!-- TODO: loop through `shopping` and render each item inside a <li> element -->
+      <!-- loop through `shopping` and render each item inside a <li> element -->
+      <li th:each="item : ${shopping}" th:text="${item}"></li>
     </ul>
   </body>
 </html>
