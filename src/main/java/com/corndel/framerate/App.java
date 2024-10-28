@@ -3,9 +3,13 @@ package com.corndel.framerate;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
+import com.corndel.framerate.repositories.MovieRepository;
+
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 import io.javalin.rendering.template.JavalinThymeleaf;
+
+import java.util.Map;
 
 public class App {
   public static void main(String[] args) {
@@ -30,7 +34,7 @@ public class App {
         });
 
     app.get("/", ctx -> {
-      ctx.result("Hello, World!");
+      ctx.render("/movies/index", Map.of("movies", MovieRepository.findAll()));
     });
 
     return app;
