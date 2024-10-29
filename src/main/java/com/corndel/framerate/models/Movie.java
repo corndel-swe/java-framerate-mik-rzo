@@ -53,4 +53,8 @@ public class Movie {
   public String getGenresAsString() {
     return String.join(", ", this.genres.stream().map(Movie.Genre::name).toArray(String[]::new));
   }
+
+  public String getTitle() {
+    return this.title;
+  }
 }

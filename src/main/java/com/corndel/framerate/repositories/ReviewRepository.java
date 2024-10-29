@@ -28,4 +28,19 @@ public class ReviewRepository {
       }
     }
   }
+
+  public static void insertReview(int movieId, int rating, String content) throws SQLException {
+    String query = "INSERT INTO reviews (movieId, rating, content) VALUES (?, ?, ?)";
+
+    try (var con = DB.getConnection();
+         var stmt = con.prepareStatement(query)) {
+      stmt.setInt(1, movieId);
+      stmt.setInt(2, rating);
+      stmt.setString(3, content);
+      boolean result = stmt.executeUpdate() == 1;
+      if (!result) {
+        throw new SQLException("Insertion failed: No rows affected.");
+      }
+    }
+  }
 }

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+  <h1 th:text="'Post a review for ' + ${movieTitle}"></h1>
+  <form action="/review" method="POST">
+    <label for="movieId" style="display: none;"></label>
+    <input type="number" id="movieId" name="movieId" th:value="${movieId}" style="display: none;" readonly>
+
+    <label for="rating">Rating</label>
+    <input type="number" min="0" max="10" name="rating" id="rating"/>
+
+    <label for="content">Write your review here</label>
+    <textarea name="content" id="content"></textarea>
+
+    <button type="submit">Submit!</button>
+  </form>
+</body>
+</html>

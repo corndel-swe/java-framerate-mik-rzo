@@ -48,6 +48,21 @@ public class App {
       ctx.render("/movie/single", Map.of("movie", movie, "reviews", reviews));
     });
 
+    app.get("/review/{id}", ctx -> {
+      int movieId = Integer.parseInt((ctx.pathParam("id")));
+      String movieTitle = MovieRepository.findById(movieId).getTitle();
+      ctx.render("/review/new", Map.of("movieTitle", movieTitle, "movieId", movieId));
+    });
+
+    app.post("/review", ctx -> {
+      int movieId = ctx.formParamAsClass("movieId", Integer.class).get();
+      int rating = ctx.formParamAsClass("rating", Integer.class).get();
+      String content = ctx.formParamAsClass("content", String.class).get();
+
+      ReviewRepository.insertReview(movieId, rating, content);
+      ctx.status(201);
+    });
+
     return app;
   }
 }
