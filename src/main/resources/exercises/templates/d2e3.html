@@ -9,8 +9,17 @@
   <body>
     <h1>Submit your details</h1>
     <!--
-    TODO:
     - create a form which posts to the '/submit' endpoint
     - it should send a "name" and an "email"
-  --></body>
+    -->
+    <form action="/submit" method="post">
+      <label for="name">name</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="email">email</label>
+      <input type="text" name="email" id="email" />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
