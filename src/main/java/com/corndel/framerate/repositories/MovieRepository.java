@@ -18,7 +18,7 @@ public class MovieRepository {
         var stmt = con.createStatement();
         var rs = stmt.executeQuery(query);) {
 
-      var users = new ArrayList<Movie>();
+      var movies = new ArrayList<Movie>();
       while (rs.next()) {
         var id = rs.getInt("id");
         var title = rs.getString("title");
@@ -33,10 +33,10 @@ public class MovieRepository {
             .map(Genre::valueOf)
             .collect(Collectors.toList());
 
-        users.add(new Movie(id, title, releaseDate, ageRating, genres, runtime, imageURL));
+        movies.add(new Movie(id, title, releaseDate, ageRating, genres, runtime, imageURL));
       }
 
-      return users;
+      return movies;
     }
   }
 

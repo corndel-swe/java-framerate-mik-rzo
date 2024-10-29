@@ -26,7 +26,7 @@ jobs:
         with:
           test-name: D1E1
           setup-command: ''
-          command: './mvnw test -Dtest=D1E1Test'
+          command: './mvnw test -Dtest=D1E1Tests'
           timeout: 1
           max-score: 1
 
@@ -36,7 +36,7 @@ jobs:
         with:
           test-name: D1E2
           setup-command: ''
-          command: './mvnw test -Dtest=D1E2Test'
+          command: './mvnw test -Dtest=D1E2Tests'
           timeout: 1
           max-score: 1
 
@@ -46,7 +46,7 @@ jobs:
         with:
           test-name: D1E3
           setup-command: ''
-          command: './mvnw test -Dtest=D1E3Test'
+          command: './mvnw test -Dtest=D1E3Tests'
           timeout: 1
           max-score: 1
 
@@ -56,7 +56,7 @@ jobs:
         with:
           test-name: D2E1
           setup-command: ''
-          command: './mvnw test -Dtest=D2E1Test'
+          command: './mvnw test -Dtest=D2E1Tests'
           timeout: 1
           max-score: 1
 
@@ -66,7 +66,7 @@ jobs:
         with:
           test-name: D2E2
           setup-command: ''
-          command: './mvnw test -Dtest=D2E2Test'
+          command: './mvnw test -Dtest=D2E2Tests'
           timeout: 1
           max-score: 1
 
@@ -76,7 +76,7 @@ jobs:
         with:
           test-name: D2E3
           setup-command: ''
-          command: './mvnw test -Dtest=D2E3Test'
+          command: './mvnw test -Dtest=D2E3Tests'
           timeout: 1
           max-score: 1
 

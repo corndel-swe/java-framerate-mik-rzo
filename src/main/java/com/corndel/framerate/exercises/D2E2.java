@@ -27,11 +27,11 @@ public class D2E2 {
     app.get(
         "/d2e2",
         ctx -> {
-          // TODO: Render 'd2e2.html'
+          // Render 'd2e2.html'
           // (note, we have used setPrefix above so the path is relative to
           // /exercises/templates/)
-
-          // TODO: Open d2e2.html and follow the instructions
+          ctx.render("d2e2");
+          // Open d2e2.html and follow the instructions
         });
 
     return app;

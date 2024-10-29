@@ -26,13 +26,13 @@ public class Movie {
   }
 
   public Movie(
-      int id,
-      String title,
-      String releaseDate,
-      String ageRating,
-      List<Genre> genres,
-      int runtime,
-      String imageURL) {
+    int id,
+    String title,
+    String releaseDate,
+    String ageRating,
+    List<Genre> genres,
+    int runtime,
+    String imageURL) {
     this.id = id;
     this.title = title;
     this.releaseDate = releaseDate;
@@ -49,4 +49,12 @@ public class Movie {
   public List<Genre> genres;
   public int runtime;
   public String imageURL;
+
+  public String getGenresAsString() {
+    return String.join(", ", this.genres.stream().map(Movie.Genre::name).toArray(String[]::new));
+  }
+
+  public String getTitle() {
+    return this.title;
+  }
 }
