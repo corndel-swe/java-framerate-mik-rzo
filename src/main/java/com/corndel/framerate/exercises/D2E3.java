@@ -33,13 +33,14 @@ public class D2E3 {
     app.post(
         "/submit",
         ctx -> {
-          // TODO: Open d2e3.html and follow the instructions
+          // Open d2e3.html and follow the instructions
+          ctx.render("d2e3");
 
-          // TODO: get the `name` and `email` from the form so that the below response
+          // get the `name` and `email` from the form so that the below response
           // works
 
-          var name = "";
-          var email = "";
+          var name = ctx.formParamAsClass("name", String.class).get();
+          var email = ctx.formParamAsClass("email", String.class).get();;
 
           ctx.result("Received: " + name + ", " + email);
         });
