@@ -34,7 +34,6 @@ public class D2E3 {
         "/submit",
         ctx -> {
           // Open d2e3.html and follow the instructions
-          ctx.render("d2e3");
 
           // get the `name` and `email` from the form so that the below response
           // works
