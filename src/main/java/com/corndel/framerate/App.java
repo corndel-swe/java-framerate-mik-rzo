@@ -38,14 +38,14 @@ public class App {
       });
 
     app.get("/", ctx -> {
-      ctx.render("/movies/index", Map.of("movies", MovieRepository.findAll()));
+      ctx.render("/movie/index", Map.of("movies", MovieRepository.findAll()));
     });
 
     app.get("/movie/{id}", ctx -> {
       int movieId = Integer.parseInt(ctx.pathParam("id"));
       Movie movie = MovieRepository.findById(movieId);
       List<Review> reviews = ReviewRepository.findByMovie(movieId);
-      ctx.render("/movies/single", Map.of("movie", movie, "reviews", reviews));
+      ctx.render("/movie/single", Map.of("movie", movie, "reviews", reviews));
     });
 
     return app;
