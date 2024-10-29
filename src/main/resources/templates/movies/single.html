@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameRate</title>
+</head>
+<body>
+  <h1 th:text="${movie.title}"></h1>
+  <img th:src="${movie.imageURL}" th:alt="'Poster for ' + ${movie.title}"/>
+  <p th:text="'Release date: ' + ${movie.releaseDate}"></p>
+  <p th:text="'Runtime: ' + ${movie.runtime} + ' minutes'"></p>
+  <p th:text="'Age rating: ' + ${movie.ageRating}"></p>
+  <p th:text="'Genres: ' + ${movie.getGenresAsString()}"></p>
+  <h3>Reviews:</h3>
+  <ul>
+    <li th:each="review: ${reviews}">
+      <p th:text="'Posted on ' + ${#dates.format(new java.util.Date(review.createdAt), 'yyyy-MM-dd HH:mm:ss')}"></p>
+      <p th:text="${review.rating} + '/10'"></p>
+      <p th:text="${review.content}"></p>
+    </li>
+  </ul>
+</body>
+</html>
